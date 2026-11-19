@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Tec - Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="{{ url_for('static', filename='css/media/logo.jpg') }}" alt="Logo Eco-Clean" style="height: 38px; width: auto; border-radius: 6px; background: white; padding: 2px;">
+            <span>Eco-Tec | Eco-Clean</span>
+        </div>
+        <nav>
+            <a href="/" class="active">Inicio</a>
+            <a href="/catalogo">Catálogo</a>
+            <a href="#contacto" class="btn-nav">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="hero-container">
+        <!-- Tarjeta Principal de Presentación con Logotipo -->
+        <div class="hero-card">
+            <div style="margin: 0 auto 20px; max-width: 280px;">
+                <img src="{{ url_for('static', filename='css/media/logo.jpg') }}" alt="Logotipo Eco-Clean" style="width: 100%; height: auto; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+            </div>
+
+            <p class="hero-subtitle">Proyecto Eco-Tec</p>
+            <h1>Eco-Clean</h1>
+            
+            <!-- Eslogan -->
+            <p class="slogan"><em>"Superficies impecables, desinfectadas y sin malos olores."</em></p>
+            
+            <p class="hero-text">
+                En <strong>Eco-Tec</strong> creamos un potente jabón multiusos ecológico para todas las superficies de alto rendimiento. 
+                Nuestra fórmula artesanal a base de jabón neutro (Jabón Zote blanco), vinagre, bicarbonato de sodio y alcohol remueve la grasa más difícil, elimina manchas pegadas y desinfecta sin contaminar el agua.
+            </p>
+            <a href="/catalogo" class="btn-hero">Ver producto en el catálogo</a>
+        </div>
+
+        <!-- Sección de Equipo de Trabajo -->
+        <section class="team-section">
+            <h2>👥 Equipo de Desarrollo</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <span class="team-icon">👤</span>
+                    <p>Ethan Nirek Amaral Martinez</p>
+                </div>
+                <div class="team-card">
+                    <span class="team-icon">👤</span>
+                    <p>Dylan Santiago Hernandez Valente</p>
+                </div>
+                <div class="team-card">
+                    <span class="team-icon">👤</span>
+                    <p>Cristian Alexis Avalos Reyes</p>
+                </div>
+                <div class="team-card">
+                    <span class="team-icon">👤</span>
+                    <p>Jose Angel Jimenez Gonzalez</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <p style="font-size: 1.2rem; margin-bottom: 0.4rem;"><strong>Eco-Tec</strong> — Eco-Clean Jabón Multiusos Ecológico</p>
+        <p style="color: #bae6fd; margin-bottom: 1.2rem;">¡Síguenos o contáctanos en Instagram!</p>
+        
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; max-width: 850px; margin: 0 auto 1.4rem;">
+            <a href="https://instagram.com/extn.mzx" onclick="abrirInsta(event, 'extn.mzx')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.35);">
+                📸 Ethan: <strong>@extn.mzx</strong>
+            </a>
+            <a href="https://instagram.com/cris_alexiss0" onclick="abrirInsta(event, 'cris_alexiss0')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.35);">
+                📸 Cristian: <strong>@cris_alexiss0</strong>
+            </a>
+            <a href="https://instagram.com/dylanhdzz._" onclick="abrirInsta(event, 'dylanhdzz._')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.35);">
+                📸 Dylan: <strong>@dylanhdzz._</strong>
+            </a>
+            <a href="https://instagram.com/angel1230999" onclick="abrirInsta(event, 'angel1230999')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.35);">
+                📸 Angel: <strong>@angel1230999</strong>
+            </a>
+        </div>
+
+        <p style="font-size: 0.85rem; opacity: 0.85;">Limpia todas tus superficies mientras cuidas el planeta 🌍</p>
+
+        <script>
+            function abrirInsta(e, usuario) {
+                const esMovil = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+                if (esMovil) {
+                    e.preventDefault();
+                    window.location.href = "instagram://user?username=" + usuario;
+                    setTimeout(function() {
+                        window.open("https://instagram.com/" + usuario, "_blank");
+                    }, 800);
+                }
+            }
+        </script>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Tec - Catálogo Eco-Clean</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="{{ url_for('static', filename='css/media/logo.jpg') }}" alt="Logo Eco-Clean" style="height: 38px; width: auto; border-radius: 6px; background: white; padding: 2px;">
+            <span>Eco-Tec | Eco-Clean</span>
+        </div>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/catalogo" class="active">Catálogo</a>
+            <a href="#contacto" class="btn-nav">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="catalog-header">
+        <h2>Nuestro Detergente Estrella</h2>
+        <p class="subtitle">Limpieza ecológica y desinfección profunda para todas las superficies</p>
+    </section>
+
+    <main class="container">
+        <div class="products-grid single-product">
+
+            <!-- Tarjeta Única: Eco-Clean -->
+            <article class="product-card highlight">
+                <div class="badge">✨ 100% Ecológico y Biodegradable</div>
+                <div class="product-icon">🧼</div>
+                <h3>Eco-Clean - Jabón Multiusos para Todas las Superficies</h3>
+                <p class="product-desc">Fórmula ecológica y biodegradable de alto rendimiento. Su combinación de jabón neutro (Jabón Zote blanco), bicarbonato de sodio, vinagre blanco y alcohol arranca la grasa más difícil, remueve manchas pegadas, desinfecta y elimina malos olores sin químicos agresivos.</p>
+                <div class="specs">
+                    <span><strong>Uso:</strong> Todas las superficies</span>
+                    <span><strong>Contenido:</strong> Frasco de 100 ml</span>
+                    <span><strong>Dilución:</strong> 50 ml / 5 L de agua</span>
+                    <span><strong>pH:</strong> 6.8 Neutro</span>
+                </div>
+                <div class="price-row">
+                    <span class="price">$20.00 MXN</span>
+                    <a href="#receta" class="btn-card">Ver Receta y Simulador ↓</a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Sección Detallada: Receta y Método -->
+        <section id="receta" class="detail-section">
+            <h2 class="section-title">Fórmula y Método de Elaboración</h2>
+            
+            <div class="info-grid">
+                <!-- Ingredientes -->
+                <div class="info-box">
+                    <h3>🛒 Ingredientes de la Fórmula (Para 1 Litro)</h3>
+                    <ul>
+                        <li><strong>100 g</strong> Jabón neutro rallado (Jabón Zote blanco).</li>
+                        <li><strong>1 Litro</strong> Agua (500 ml para calentar + 500 ml a temperatura ambiente).</li>
+                        <li><strong>3 cdas. soperas</strong> Bicarbonato de sodio.</li>
+                        <li><strong>3 cdas. soperas</strong> Vinagre blanco.</li>
+                        <li><strong>1 cda.</strong> Alcohol.</li>
+                    </ul>
+                </div>
+
+                <!-- Resumen de Beneficios -->
+                <div class="info-box highlight-box">
+                    <h3>✨ Propiedades Ecológicas de la Mezcla</h3>
+                    <p><strong>Bicarbonato de sodio + Vinagre:</strong> Potente acción quitamanchas y neutralizadora de malos olores sin contaminar.</p>
+                    <p><strong>Alcohol:</strong> Aporta desinfección rápida y evaporación limpia en cualquier superficie.</p>
+                    <p><strong>Jabón neutro (Jabón Zote blanco):</strong> Base limpiadora ecológica, suave con la piel y totalmente biodegradable.</p>
+                </div>
+            </div>
+
+            <!-- Calculadora Interactiva de Rendimiento -->
+            <div style="background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 100%); border: 2px solid #0284c7; border-radius: 20px; padding: 1.8rem; text-align: center; margin-bottom: 1.8rem; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.14);">
+                <h3 style="color: #0369a1; margin-bottom: 0.4rem; font-size: 1.3rem;">🧮 Calculadora Interactiva de Dilución</h3>
+                <p style="color: #334155; font-size: 0.95rem;">Desliza para calcular cuánto <strong>Eco-Clean</strong> necesitas según los litros de agua que vas a usar (Proporción: 50 ml por cada 5 L):</p>
+                
+                <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; margin: 1.2rem 0;">
+                    <label for="litrosAgua" style="font-weight: 700; color: #0f172a;">Agua: <span id="valorLitros" style="color: #0284c7; font-size: 1.2rem;">5</span> Litros</label>
+                    <input type="range" id="litrosAgua" min="1" max="20" value="5" oninput="calcularDilucion()" style="width: 240px; accent-color: #059669; cursor: pointer;">
+                </div>
+
+                <div style="display: inline-block; background: #ffffff; padding: 0.8rem 1.6rem; border-radius: 14px; font-size: 1.1rem; font-weight: 800; color: #065f46; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+                    💧 Usa <span id="resultadoMl" style="color: #0284c7; font-size: 1.3rem;">50 ml</span> de Eco-Clean (<span id="porcentajeFrasco">50%</span> de un frasco de 100 ml)
+                </div>
+            </div>
+
+            <!-- Paso a Paso -->
+            <div class="steps-box">
+                <h3>📋 Pasos de Elaboración</h3>
+                <ol class="steps-list">
+                    <li><strong>Paso 1 (Calentar y disolver):</strong> Poner a calentar 500 ml de agua en una olla y vaciar los 100 g de jabón neutro rallado (Jabón Zote blanco). Mezclar constantemente hasta que se derrita por completo.</li>
+                    <li><strong>Paso 2 (Enfriar):</strong> Retirar del fuego y dejar enfriar la mezcla a temperatura ambiente.</li>
+                    <li><strong>Paso 3 (Mezclar resto de ingredientes):</strong> Una vez frío, agregar los otros 500 ml de agua a temperatura ambiente, las 3 cucharadas soperas de bicarbonato de sodio, las 3 cucharadas soperas de vinagre blanco y la cucharada de alcohol.</li>
+                    <li><strong>Paso 4 (Integrar bien):</strong> Mezclar todo perfectamente bien hasta incorporar por completo todos los ingredientes.</li>
+                    <li><strong>Paso 5 (Envasar y reposar):</strong> Vaciar la mezcla en el recipiente final (garrafa o recipiente base) y dejar reposar.</li>
+                    <li><strong>Paso 6 (Envasado final):</strong> Repartir la mezcla lista rellenando los <strong>frascos individuales de 100 ml</strong> para su venta e identificación.</li>
+                </ol>
+            </div>
+
+            <!-- Información del Envase -->
+            <div class="packaging-card">
+                <h3>🧴 Información del Envase</h3>
+                <ul>
+                    <li><strong>Presentación comercial:</strong> Frascos individuales de 100 ml.</li>
+                    <li><strong>Material y Color:</strong> Botellas PET transparentes reutilizables con tapa de rosca hermética.</li>
+                    <li><strong>Visibilidad y cuidado:</strong> Su diseño transparente permite apreciar la consistencia natural del producto y controlar el nivel de uso; se recomienda conservarlo en un lugar fresco lejos de la luz solar directa.</li>
+                    <li><strong>Etiquetado eco-friendly:</strong> Etiquetas impresas en papel biodegradable con toda la información de uso y seguridad.</li>
+                </ul>
+            </div>
+
+            <!-- Apartado Visual: Etiqueta del Producto -->
+            <div class="label-section" style="background: #f0fdf4; border: 2px solid #16a34a; text-align: center;">
+                <h3 style="color: #15803d; margin-top: 0;">🏷️ Etiqueta Oficial del Producto (100 ml)</h3>
+                <p style="color: #334155; font-size: 0.95rem; margin-bottom: 18px;">Diseño de etiqueta horizontal adherida a cada envase transparente de Eco-Clean:</p>
+                
+                <div style="max-width: 750px; margin: 0 auto;">
+                    <img src="{{ url_for('static', filename='css/media/etiqueta.jpg') }}" alt="Etiqueta Oficial Eco-Clean" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 20px rgba(22, 163, 74, 0.2); border: 1px solid #bbf7d0;">
+                </div>
+            </div>
+
+            <!-- Ventajas y Desventajas -->
+            <div class="pros-cons-section">
+                <h3>📊 Ventajas y Desventajas del Producto Ecológico</h3>
+                <div class="pros-cons-grid">
+                    <div class="pro-box">
+                        <h4>✅ Ventajas (Producto 100% Ecológico)</h4>
+                        <ul>
+                            <li><strong>Cuidado Ambiental:</strong> Al ser 100% ecológico y biodegradable, el agua residual no contamina ríos, suelos ni mantos acuíferos.</li>
+                            <li><strong>Seguro para la Salud y Mascotas:</strong> Al no contener cloro, sosa cáustica ni vapores tóxicos, protege las vías respiratorias y la piel.</li>
+                            <li><strong>Versatilidad Total:</strong> Funciona eficazmente como jabón multiusos en pisos, mesas, cocina, baños y todo tipo de superficies.</li>
+                            <li><strong>Desinfección y Control de Olores Natural:</strong> El bicarbonato de sodio, vinagre blanco y alcohol eliminan bacterias y malos olores sin fragancias sintéticas.</li>
+                            <li><strong>Económico y Rendidor:</strong> Con solo 50 ml se preparan 5 Litros de solución limpiadora ecológica.</li>
+                        </ul>
+                    </div>
+                    <div class="con-box">
+                        <h4>⚠️ Desventajas / Limitaciones (Por su Naturaleza Ecológica)</h4>
+                        <ul>
+                            <li><strong>Sin conservadores artificiales:</strong> Al ser una fórmula ecológica libre de químicos sintéticos, tiene una vida útil natural de 3 a 6 meses.</li>
+                            <li><strong>Disolución artesanal:</strong> Requiere calentar el agua correctamente para disolver el jabón neutro (Jabón Zote blanco) sin dejar grumos.</li>
+                            <li><strong>Menos espuma artificial:</strong> Al no usar detergentes derivados del petróleo, produce menos espuma que los productos comerciales, manteniendo el mismo poder de limpieza.</li>
+                            <li><strong>Almacenamiento cuidadoso:</strong> Al venir en envase transparente, debe conservarse bien cerrado y protegido del sol directo para preservar sus ingredientes naturales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galería de Fotos y Videos -->
+            <div class="media-section">
+                <h3>📸 Demostración y Galería de Fotos / Videos</h3>
+                <p class="media-note">Evidencia fotográfica del producto terminado y demostración de elaboración.</p>
+                
+                <div class="media-gallery-grid">
+                    <!-- Tarjeta de Foto -->
+                    <div class="media-card">
+                        <img src="{{ url_for('static', filename='css/media/producto.jpg') }}" alt="Envase de Eco-Clean" class="media-item">
+                        <p class="media-caption">🧴 Envase terminado de Eco-Clean</p>
+                    </div>
+
+                    <!-- Tarjeta de Video -->
+                    <div class="media-card">
+                        <video controls class="media-item">
+                            <source src="{{ url_for('static', filename='css/media/demo.mp4') }}" type="video/mp4">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
+                        <p class="media-caption">🎥 Video de elaboración del producto</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <p style="font-size: 1.2rem; margin-bottom: 0.4rem;"><strong>Eco-Tec</strong> — Eco-Clean Jabón Multiusos Ecológico</p>
+        <p style="color: #bae6fd; margin-bottom: 1.2rem;">¡Síguenos o contáctanos en Instagram!</p>
+        
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; max-width: 850px; margin: 0 auto 1.4rem;">
+            <a href="https://instagram.com/extn.mzx" onclick="abrirInsta(event, 'extn.mzx')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.35);">
+                📸 Ethan: <strong>@extn.mzx</strong>
+            </a>
+            <a href="https://instagram.com/cris_alexiss0" onclick="abrirInsta(event, 'cris_alexiss0')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.35);">
+                📸 Cristian: <strong>@cris_alexiss0</strong>
+            </a>
+            <a href="https://instagram.com/dylanhdzz._" onclick="abrirInsta(event, 'dylanhdzz._')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.35);">
+                📸 Dylan: <strong>@dylanhdzz._</strong>
+            </a>
+            <a href="https://instagram.com/angel1230999" onclick="abrirInsta(event, 'angel1230999')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.35);">
+                📸 Angel: <strong>@angel1230999</strong>
+            </a>
+        </div>
+
+        <p style="font-size: 0.85rem; opacity: 0.85;">Limpia todas tus superficies mientras cuidas el planeta 🌍</p>
+
+        <script>
+            function calcularDilucion() {
+                const litros = document.getElementById('litrosAgua').value;
+                const ml = litros * 10;
+                document.getElementById('valorLitros').textContent = litros;
+                document.getElementById('resultadoMl').textContent = ml + ' ml';
+                document.getElementById('porcentajeFrasco').textContent = ml + '%';
+            }
+
+            function abrirInsta(e, usuario) {
+                const esMovil = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+                if (esMovil) {
+                    e.preventDefault();
+                    window.location.href = "instagram://user?username=" + usuario;
+                    setTimeout(function() {
+                        window.open("https://instagram.com/" + usuario, "_blank");
+                    }, 800);
+                }
+            }
+        </script>
+    </footer>
+
+</body>
+</html>
