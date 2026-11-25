@@ -75,17 +75,17 @@
             </div>
 
             <!-- Calculadora Interactiva de Rendimiento -->
-            <div style="background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 100%); border: 2px solid #0284c7; border-radius: 20px; padding: 1.8rem; text-align: center; margin-bottom: 1.8rem; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.14);">
-                <h3 style="color: #0369a1; margin-bottom: 0.4rem; font-size: 1.3rem;">🧮 Calculadora Interactiva de Dilución</h3>
-                <p style="color: #334155; font-size: 0.95rem;">Desliza para calcular cuánto <strong>Eco-Clean</strong> necesitas según los litros de agua que vas a usar (Proporción: 50 ml por cada 5 L):</p>
+            <div style="background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 100%); border: 2px solid #0284c7; border-radius: 20px; padding: 1.5rem 1rem; text-align: center; margin-bottom: 1.6rem; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.14);">
+                <h3 style="color: #0369a1; margin-bottom: 0.4rem; font-size: 1.25rem;">🧮 Calculadora Interactiva de Dilución</h3>
+                <p style="color: #334155; font-size: 0.92rem;">Desliza para calcular cuánto <strong>Eco-Clean</strong> necesitas según los litros de agua que vas a usar (Proporción: 50 ml por cada 5 L):</p>
                 
-                <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; margin: 1.2rem 0;">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin: 1.1rem 0;">
                     <label for="litrosAgua" style="font-weight: 700; color: #0f172a;">Agua: <span id="valorLitros" style="color: #0284c7; font-size: 1.2rem;">5</span> Litros</label>
-                    <input type="range" id="litrosAgua" min="1" max="20" value="5" oninput="calcularDilucion()" style="width: 240px; accent-color: #059669; cursor: pointer;">
+                    <input type="range" id="litrosAgua" min="1" max="20" value="5" oninput="calcularDilucion()" style="width: 100%; max-width: 240px; accent-color: #059669; cursor: pointer;">
                 </div>
 
-                <div style="display: inline-block; background: #ffffff; padding: 0.8rem 1.6rem; border-radius: 14px; font-size: 1.1rem; font-weight: 800; color: #065f46; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
-                    💧 Usa <span id="resultadoMl" style="color: #0284c7; font-size: 1.3rem;">50 ml</span> de Eco-Clean (<span id="porcentajeFrasco">50%</span> de un frasco de 100 ml)
+                <div style="display: inline-block; background: #ffffff; padding: 0.75rem 1.2rem; border-radius: 14px; font-size: 1rem; font-weight: 800; color: #065f46; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); max-width: 100%;">
+                    💧 Usa <span id="resultadoMl" style="color: #0284c7; font-size: 1.25rem;">50 ml</span> de Eco-Clean (<span id="porcentajeFrasco">50%</span> de un frasco de 100 ml)
                 </div>
             </div>
 
@@ -120,6 +120,16 @@
                 
                 <div style="max-width: 750px; margin: 0 auto;">
                     <img src="{{ url_for('static', filename='css/media/etiqueta.jpg') }}" alt="Etiqueta Oficial Eco-Clean" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 20px rgba(22, 163, 74, 0.2); border: 1px solid #bbf7d0;">
+                </div>
+            </div>
+
+            <!-- Apartado Visual: Cartel Promocional -->
+            <div class="label-section" style="background: linear-gradient(135deg, #ecfdf5 0%, #e0f2fe 100%); border: 2px solid #0284c7; text-align: center;">
+                <h3 style="color: #0369a1; margin-top: 0;">📢 Cartel Promocional Oficial</h3>
+                <p style="color: #334155; font-size: 0.95rem; margin-bottom: 18px;">Infografía y cartel publicitario de Eco-Clean con modo de uso, beneficios ambientales y presentación:</p>
+                
+                <div style="max-width: 480px; margin: 0 auto;">
+                    <img src="{{ url_for('static', filename='css/media/cartel.jpg') }}" alt="Cartel Promocional Eco-Clean" style="width: 100%; height: auto; border-radius: 14px; box-shadow: 0 10px 25px rgba(2, 132, 199, 0.22); border: 2px solid #bae6fd;">
                 </div>
             </div>
 
@@ -178,17 +188,17 @@
         <p style="font-size: 1.2rem; margin-bottom: 0.4rem;"><strong>Eco-Tec</strong> — Eco-Clean Jabón Multiusos Ecológico</p>
         <p style="color: #bae6fd; margin-bottom: 1.2rem;">¡Síguenos o contáctanos en Instagram!</p>
         
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; max-width: 850px; margin: 0 auto 1.4rem;">
-            <a href="https://instagram.com/extn.mzx" onclick="abrirInsta(event, 'extn.mzx')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.35);">
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; max-width: 850px; margin: 0 auto 1.4rem;">
+            <a href="https://instagram.com/extn.mzx" onclick="abrirInsta(event, 'extn.mzx')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 14px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.35);">
                 📸 Ethan: <strong>@extn.mzx</strong>
             </a>
-            <a href="https://instagram.com/cris_alexiss0" onclick="abrirInsta(event, 'cris_alexiss0')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.35);">
+            <a href="https://instagram.com/cris_alexiss0" onclick="abrirInsta(event, 'cris_alexiss0')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 14px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.35);">
                 📸 Cristian: <strong>@cris_alexiss0</strong>
             </a>
-            <a href="https://instagram.com/dylanhdzz._" onclick="abrirInsta(event, 'dylanhdzz._')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.35);">
+            <a href="https://instagram.com/dylanhdzz._" onclick="abrirInsta(event, 'dylanhdzz._')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 14px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.35);">
                 📸 Dylan: <strong>@dylanhdzz._</strong>
             </a>
-            <a href="https://instagram.com/angel1230999" onclick="abrirInsta(event, 'angel1230999')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; border: 1px solid rgba(255,255,255,0.35);">
+            <a href="https://instagram.com/angel1230999" onclick="abrirInsta(event, 'angel1230999')" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.15); color: #ffffff; text-decoration: none; padding: 8px 14px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.35);">
                 📸 Angel: <strong>@angel1230999</strong>
             </a>
         </div>
